@@ -46,7 +46,7 @@ http://127.0.0.1:3000
 
 ### 基本命令
 
-如果你想跟方便的开发项目, 需要安装 `nodemon`:
+如果你想更加方便的开发项目, 需要安装 `nodemon`:
 ```
 sudo npm install -g nodemon
 ```
