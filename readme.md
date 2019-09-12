@@ -48,7 +48,7 @@ http://127.0.0.1:3000
 
 如果你想更加方便的开发项目, 需要安装 `nodemon`:
 ```
-sudo npm install -g nodemon
+$ sudo npm install -g nodemon
 ```
 
 测试环境启动:
