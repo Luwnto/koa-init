@@ -1,0 +1,8 @@
+.avatar-div {
+    min-width: 1px;
+    padding-left: 12px;
+}
+
+.avatar-hover:hover {
+    background-color: #e5e5e5;
+}

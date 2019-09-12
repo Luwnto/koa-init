@@ -1,0 +1,29 @@
+{
+  "name": "koa-init",
+  "version": "1.0.0",
+  "description": "koa-init-V1.0",
+  "main": "index.js",
+  "author": "luwnto",
+  "license": "MIT",
+  "scripts": {
+    "start": "export NODE_ENV='development' && node app.js",
+    "build": "export NODE_ENV='production' && nodemon app.js",
+    "dev": "export NODE_ENV='development' && nodemon app.js",
+    "migrate": "node ./utils/migrate.js"
+  },
+  "dependencies": {
+    "koa": "2.0.0",
+    "koa-body": "4.1.1",
+    "koa-logger": "3.2.1",
+    "koa-router": "7.0.0",
+    "koa-session": "5.12.3",
+    "koa-static": "5.0.0",
+    "log4js": "5.1.0",
+    "mime": "1.3.4",
+    "mysql": "2.11.1",
+    "mz": "2.4.0",
+    "nunjucks": "2.4.2",
+    "path": "0.12.7",
+    "sequelize": "3.24.1"
+  }
+}
