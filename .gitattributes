@@ -1,0 +1,3 @@
+   *.js linguist-language=koa
+   *.css linguist-language=koa
+   *.html linguist-language=koa
