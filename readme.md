@@ -1,6 +1,4 @@
 
-# koa-init
-
 ## 写在前面
 
 找了很久没找到合适的开箱即用的Koa框架, 自己动手造了一个, 封装了很多实用的功能, 集成了Mysql的CURD, 完成了一个登陆和注册的功能, 欢迎使用
@@ -17,6 +15,16 @@ $ git clone git@github.com:Luwnto/koa-init.git
 进入到项目目录, 复制 `env.example.js` 到项目根目录, 名字改为 `env.js`:
 ```
 $ cp env.example.js env.js
+```
+
+修改env.js, 将数据库配置改成你的:
+```
+$ vim env.js
+```
+
+安装依赖:
+```
+$ npm install
 ```
 
 执行数据迁移, 完成表创建:
