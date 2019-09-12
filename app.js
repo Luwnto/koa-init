@@ -36,7 +36,7 @@ app.use(templating());
 // 引入路由文件
 const controller = require('./utils/controller');
 // 注册路由控制器
-app.use(controller(['/controllers', '/controllers/home', '/controllers/admin']));
+app.use(controller(['/controllers', '/controllers/home']));
 
 // 开启web服务并监听3000端口
 app.listen(3000);
