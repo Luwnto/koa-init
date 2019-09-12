@@ -1,6 +1,8 @@
 
 ## 写在前面
 
+![](https://img.shields.io/badge/node-%3E%3D8.1.0-green) ![](https://img.shields.io/badge/mysql-%3E%3D5.7.0-red) ![](https://img.shields.io/badge/npm-%3E%3D6.0.0-brightgreen)
+
 找了很久没找到合适的开箱即用的Koa框架, 自己动手造了一个, 封装了很多实用的功能, 集成了Mysql的CURD, 完成了一个登陆和注册的功能, 欢迎使用
 
 ## 开始使用
@@ -37,7 +39,17 @@ $ npm run migrate
 $ npm run start
 ```
 
+浏览器中访问项目:
+```
+http://127.0.0.1:3000
+```
+
 ### 基本命令
+
+如果你想跟方便的开发项目, 需要安装 `nodemon`:
+```
+sudo npm install -g nodemon
+```
 
 测试环境启动:
 ```
@@ -59,7 +71,7 @@ $ npm run dev
 $ npm run migrate
 ```
 
-> 测试环境会显示报错信息, 生产环境会显示404页面, 生产环境还会生产页面缓存
+> 测试环境会显示报错信息, 生产环境会显示404页面, 生产环境还会生成页面缓存
 
 ### 数据库模型和数据迁移
 
@@ -225,7 +237,7 @@ console.log(user);
 
 [Sequelize文档](https://sequelize.org/master/)
 
-## LICENSED
+## LICENSE
 
-MIT
+[MIT](https://github.com/Luwnto/koa-init/blob/master/LICENSE)
 

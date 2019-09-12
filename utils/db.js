@@ -1,14 +1,8 @@
 const Sequelize = require('sequelize');
 
-const uuid = require('node-uuid');
-
 const config = require('../config/datebase');
 
 console.log('init sequelize...');
-
-function generateId() {
-    return uuid.v4();
-}
 
 var sequelize = new Sequelize(config.mysql.database, config.mysql.username, config.mysql.password, {
     host: config.mysql.host,
@@ -20,13 +14,12 @@ var sequelize = new Sequelize(config.mysql.database, config.mysql.username, conf
     }
 });
 
-const ID_TYPE = Sequelize.STRING(50);
-
 function defineModel(name, attributes) {
     var attrs = {};
     attrs.id = {
-        type: ID_TYPE,
-        primaryKey: true
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
     };
 
     for (let key in attributes) {
@@ -52,30 +45,6 @@ function defineModel(name, attributes) {
     };
     console.log('model defined for table: ' + name);
 
-
-    // console.log('model defined for table: ' + name + '\n' + JSON.stringify(attrs, function (k, v) {
-    //     if (k === 'type') {
-    //         for (let key in Sequelize) {
-    //             if (key === 'ABSTRACT' || key === 'NUMBER') {
-    //                 continue;
-    //             }
-    //             let dbType = Sequelize[key];
-    //             if (typeof dbType === 'function') {
-    //                 if (v instanceof dbType) {
-    //                     if (v._length) {
-    //                         return `${dbType.key}(${v._length})`;
-    //                     }
-    //                     return dbType.key;
-    //                 }
-    //                 if (v === dbType) {
-    //                     return dbType.key;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return v;
-    // }, '  '));
-
     return sequelize.define(name, attrs, {
         tableName: name,
         timestamps: false,
@@ -84,9 +53,6 @@ function defineModel(name, attributes) {
                 let now = Date.now();
                 if (obj.isNewRecord) {
                     console.log('will create entity...' + obj);
-                    if (!obj.id) {
-                        obj.id = generateId();
-                    }
                     obj.createdAt = now;
                     obj.updatedAt = now;
                 } else {
@@ -115,8 +81,5 @@ var exp = {
 for (let type of TYPES) {
     exp[type] = Sequelize[type];
 }
-
-exp.ID = ID_TYPE;
-exp.generateId = generateId;
 
 module.exports = exp;
