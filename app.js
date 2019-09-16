@@ -26,7 +26,7 @@ app.use(static_('./'));
 
 // 解析POST请求, 并设置文件上传
 const koaBody = require('./middleware/koaBody');
-app.use(koaBody);
+app.use(koaBody(app));
 
 // 引入页面模板渲染工具
 const templating = require('./utils/templating');
@@ -36,7 +36,7 @@ app.use(templating());
 // 引入路由文件
 const controller = require('./utils/controller');
 // 注册路由控制器
-app.use(controller(['/controllers', '/controllers/home']));
+app.use(controller(['/controllers', '/controllers/home', '/controllers/admin']));
 
 // 开启web服务并监听3000端口
 app.listen(3000);
