@@ -6,7 +6,7 @@
  * @returns {Promise<void>}
  */
 var index = async (ctx, next) => {
-    ctx.render('admin/advertisement.html');
+    ctx.render('admin/slide.html');
 };
 
 /**
@@ -17,10 +17,16 @@ var index = async (ctx, next) => {
  * @returns {Promise<void>}
  */
 var create = async (ctx, next) => {
-    ctx.render('admin/advertisement_create.html');
+    ctx.render('admin/slide_create.html');
+};
+
+var save = async (ctx, next) => {
+    console.log(ctx.uploadpath);
+    console.log(ctx.request.files);
 };
 
 module.exports = {
     'GET /admin/slide': index,
-    'GET /admin/slide/create': create
+    'GET /admin/slide/create': create,
+    'POST /admin/slide/save': save,
 };

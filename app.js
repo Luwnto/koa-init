@@ -26,7 +26,7 @@ app.use(static_('./'));
 
 // 解析POST请求, 并设置文件上传
 const koaBody = require('./middleware/koaBody');
-app.use(koaBody);
+app.use(koaBody(app));
 
 // 引入页面模板渲染工具
 const templating = require('./utils/templating');
