@@ -232,7 +232,7 @@ console.log(user);
 
 ## 参考资料
 
-[廖雪峰JavaScript教程](https://www.liaoxuefeng.com/wiki/1022910821149312)
+[Koa-router](https://www.npmjs.com/package/koa-router)
 
 [Nunjucks文档](https://nunjucks.bootcss.com/)
 
