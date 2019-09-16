@@ -231,7 +231,7 @@ console.log(user);
 
 ## 参考资料
 
-[廖旭锋JavaScript教程](https://www.liaoxuefeng.com/wiki/1022910821149312)
+[廖雪峰JavaScript教程](https://www.liaoxuefeng.com/wiki/1022910821149312)
 
 [Nunjucks文档](https://nunjucks.bootcss.com/)
 
