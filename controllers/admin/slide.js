@@ -21,8 +21,8 @@ var create = async (ctx, next) => {
 };
 
 var save = async (ctx, next) => {
+    // 上传后的文件目录和名字
     console.log(ctx.uploadpath);
-    console.log(ctx.request.files);
 };
 
 module.exports = {
