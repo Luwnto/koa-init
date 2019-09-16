@@ -37,6 +37,9 @@ function templating() {
         env.addGlobal('body', ctx.request.body);
         // 添加query请求参数到全局
         env.addGlobal('query', ctx.query);
+        // 添加url path到全局
+        env.addGlobal('path', ctx.path);
+
         // // 添加params请求参数到全局
         // env.addGlobal('params', ctx.params);
 

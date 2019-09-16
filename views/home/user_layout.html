@@ -1,0 +1,45 @@
+{% extends "home/layout.html" %}
+{% block main %}
+
+<link rel="stylesheet" href="/public/css/home/user_layout.css">
+
+<div class="user-header">
+    <div class="container">
+        <div class="col-md-2">
+            <img class="pull-right user-avatar" src="{{ user.avatar }}"/>
+        </div>
+        <div class="col-md-5" style="padding-top: 40px;">
+            <p style="color: #ddd">{{ user.username }}</p>
+            <p style="color: #ccc">共 100 篇文章</p>
+        </div>
+        <div class="col-md-5">
+            <div class="user-signature">
+                {{ user.signature }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+
+    <div class="row">
+<!-- 左侧文件块 -->
+        <div class="col-md-3 index-left">
+            <div class="list-group">
+                <a href="/user/{{ user.id }}" class="list-group-item {% if path.includes('/user') %}active{% endif %}">个人信息</a>
+                <a href="#" class="list-group-item">我的文章</a>
+                <a href="#" class="list-group-item">我的收藏</a>
+                <a href="#" class="list-group-item">修改密码</a>
+            </div>
+        </div>
+
+<!-- 右侧内容块 -->
+        <div class="col-md-9 index-right">
+            {% block userBody %} {% endblock %}
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

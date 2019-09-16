@@ -14,7 +14,7 @@ var sequelize = new Sequelize(config.mysql.database, config.mysql.username, conf
     }
 });
 
-function defineModel(name, attributes) {
+function defineModel(name, attributes, opts = {}) {
     var attrs = {};
     attrs.id = {
         type: Sequelize.INTEGER,
@@ -45,7 +45,7 @@ function defineModel(name, attributes) {
     };
     console.log('model defined for table: ' + name);
 
-    return sequelize.define(name, attrs, {
+    var options = Object.assign(opts, {
         tableName: name,
         timestamps: false,
         hooks: {
@@ -62,6 +62,8 @@ function defineModel(name, attributes) {
             }
         }
     });
+
+    return sequelize.define(name, attrs, options);
 }
 
 const TYPES = ['STRING', 'INTEGER', 'BIGINT', 'TEXT', 'DOUBLE', 'DATEONLY', 'BOOLEAN'];

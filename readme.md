@@ -155,6 +155,7 @@ if判断:
 * session session相关的数据
 * body post请求相关的数据
 * query get请求query查询相关的数据
+* path 请求的路径, 如果 /user
 
 你也可以在 `utils/templating.js` 文件中自行添加你需要的全局变量:
 ```
@@ -231,7 +232,7 @@ console.log(user);
 
 ## 参考资料
 
-[廖旭锋JavaScript教程](https://www.liaoxuefeng.com/wiki/1022910821149312)
+[Koa-router](https://www.npmjs.com/package/koa-router)
 
 [Nunjucks文档](https://nunjucks.bootcss.com/)
 
