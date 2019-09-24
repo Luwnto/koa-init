@@ -22,6 +22,29 @@ function createEnv(path, opts) {
     return env;
 }
 
+function timeFormat(time) {
+    var date = new Date(time);
+    var Y = date.getFullYear()+ '-';
+    var M = date.getMonth()+ 1 + '-';
+    var D = date.getDate()+ '  ';
+    var H = date.getHours()+ ':';
+    var m = date.getMinutes()+ ':';
+    var S = date.getSeconds();
+    if (M.length < 3){
+        M = '0' + M;
+    }
+    if (H.length < 3){
+        H = '0' + H;
+    }
+    if (m.length < 3){
+        m = '0' + m;
+    }
+    if (S.length < 2){
+        S = '0' + S;
+    }
+    return Y+M+D+H+m+S;
+}
+
 function templating() {
     var isProduction = process.env.NODE_ENV === 'production';
 
@@ -42,6 +65,9 @@ function templating() {
 
         // // 添加params请求参数到全局
         // env.addGlobal('params', ctx.params);
+
+        // 添加时间戳转日期过滤器
+        env.addFilter('timeFormat', timeFormat);
 
         // 给ctx绑定render函数:
         ctx.render = function (view, model) {
